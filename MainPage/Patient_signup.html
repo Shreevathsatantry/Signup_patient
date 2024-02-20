@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient_signup</title>
     <link rel="stylesheet" href="stylePS.css">
+
     
 </head>
 <body>
@@ -28,13 +29,25 @@
         <p>
             Male<input type="radio" class="gender" name="gender" id="male">
             Female<input type="radio" class="gender" name="gender" id="female">
+            Other<input type="radio" class="gender" name="gender" id="other">
         </p>
         <p>Email:<input type="email" name="email" id="email" placeholder="email@gmail.com"></p>
-        <p>PhoneNo:<input type="number" name="PhoneNo" id="PhoneNo"></p>
+        <p>Select your country:<select id="countrySelect" onchange="updateCountryCode()">
+        </select></p>
+
+<p>PhoneNo:<input type="tel" name="PhoneNo" id="PhoneNo"></p>
+<p id="countryCode"></p>
+
+
+
         <p>Address:<textarea name="address" id="address" rows="5" cols="100"></textarea></p>
         <p>Pincode:<input type="number" name="pincode" id="pincode"></p>
-        <p>Password:<input type="password" id="password" name="password"></p>
-        <p>Confirm password:<input type="password" id="password1" name="password1"></p>
+        <form id="myForm">
+            <p>Password: <input type="password" id="password" placeholder="Enter password" oninput="validatePasswords()"></p>
+            <p>confirmPassword: <input type="password" id="confirmPassword" placeholder="Confirm password" oninput="validatePasswords()"> </p>
+          </form>
+          <p id="message"></p>
+          
         <input type="submit" class="submit" value="Submit">
         <button type="button" class="next"  onclick="redirectToPage()">Next</button>
         <!-- <button type="button" class="button">Next<a href="#"></a></button> -->
@@ -42,7 +55,10 @@
     </div>
     
 </form>
+<script src="numberCountryPS.js"></script>
+
 <script src="p_signup.js"></script> 
+<script src="passwordPS.js"></script>
 
 </body>
 </html>
